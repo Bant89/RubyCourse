@@ -1,0 +1,14 @@
+<h1> All Alpha Bloggers</h1>
+
+<%= will_paginate %>
+
+<% @users.each do |user| %>
+    <ul>
+        <li><%= link_to gravatar_for(user) , user_path(user) %> </li>
+        <li><%= link_to user.username, user_path(user) %></li>
+        <li><%= pluralize(user.articles.count, "article") if user.articles %></li>
+    </ul>
+<% end %>
+
+
+<%= will_paginate %>
